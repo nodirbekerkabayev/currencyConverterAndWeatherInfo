@@ -43,14 +43,14 @@
             <h3>Make fast and affordable international business payments</h3>
             <p>Send secure international business payments in XX currencies, all at competitive rates with no hidden
                 fees.</p>
-            <form>
+            <form >
                 <div class="row g-3 align-items-center">
                     <div class="col-md-5">
                         <label for="amount" class="form-label visually-hidden">Amount</label>
-                        <input type="number" id="amount" class="form-control" placeholder="Amount" value="10000">
+                        <input type="number" id="amount" class="form-control" placeholder="Amount" name="amount">
                     </div>
                     <div class="col-md-3 text-center">
-                        <select class="form-select">
+                        <select class="form-select" name="from">
                             <?php
                             global $currencies;
                                 foreach ($currencies as $key => $currency) {
@@ -64,13 +64,7 @@
                     </div>
                     <div class="col-md-3">
                         <select class="form-select">
-                            <?php
-                            global $currencies;
-
-                            foreach ($currencies as $key => $currency) {
-                                echo '<option value="' . $key . '">' . $key . '</option>';
-                            }
-                            ?>
+                            <option value="">USZ</option>
                         </select>
                     </div>
                 </div>
