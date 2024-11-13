@@ -4,7 +4,7 @@ Bu loyiha HTML, CSS, Bootstrap va PHP yordamida yaratildi. Loyiha valyutalarni a
 
 ## Loyiha haqida
 
-- **Til**: HTML, CSS, PHP.
+- **Til**: PHP.
 - **API**: https://cbu.uz/uz/arkhiv-kursov-valyut/json/
 - **Maqsad**: Bu loyiha o'zbek so'mini boshqa valyutaga  yoki shuni teskarisini qilishga yordam beradi.
 
@@ -20,5 +20,5 @@ Loyihani ishga tushirishdan oldin quyidagi dasturlar o'rnatilgan bo'lishi kerak:
 
 1. Loyihani klonlang:
    ```bash
-   git clone https://github.com/username/loyiha-nomi.git
-   cd loyiha-nomi
+   git clone https://github.com/nodirbekerkabayev/currencyConverter.git
+   cd currencyConverter
