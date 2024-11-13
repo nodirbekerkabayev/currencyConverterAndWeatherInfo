@@ -57,7 +57,7 @@
                                 echo '<option value="' . $key . '">' . $key . '</option>';
                             }
                             ?>
-                            <option value="USZ">USZ</option>
+                            <option value="UZS">UZS</option>
                         </select>
                     </div>
                     <div class="col-md-1 text-center">
@@ -65,7 +65,7 @@
                     </div>
                     <div class="col-md-3">
                         <select class="form-select" name="to">
-                            <option value="">USZ</option>
+                            <option value="">UZS</option>
                             <?php
                             global $currencies;
                             foreach ($currencies as $key => $currencyy) {
@@ -78,13 +78,13 @@
                 <p class="rate-info mt-2">
                     <?php
                         if (isset($_GET['amount']) && isset($_GET['from'])) {
-                            if ($_GET['from'] != 'USZ'){
+                            if ($_GET['from'] != 'UZS'){
                                 $total = (int)$_GET['amount'] * (int)$currency->getCurrencies()[$_GET['from']];
-                                echo $_GET['amount'] ." ". $_GET['from'] ." = ". $total ." USZ";
+                                echo $_GET['amount'] ." ". $_GET['from'] ." = ". $total ." UZS";
                             }
                             else{
                                 $total = (int)$_GET["amount"] / (int)$currency->getCurrencies()[$_GET["to"]];
-                                echo $_GET["amount"] ." USZ = ". $total ." ". $_GET['to']; 
+                                echo $_GET["amount"] ." UZS = ". $total ." ". $_GET['to']; 
                             }
                     }
                     ?> 
