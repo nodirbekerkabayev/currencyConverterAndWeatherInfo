@@ -57,24 +57,37 @@
                                 echo '<option value="' . $key . '">' . $key . '</option>';
                             }
                             ?>
+                            <option value="USZ">USZ</option>
                         </select>
                     </div>
                     <div class="col-md-1 text-center">
                         <span>⇆</span>
                     </div>
                     <div class="col-md-3">
-                        <select class="form-select">
+                        <select class="form-select" name="to">
                             <option value="">USZ</option>
+                            <?php
+                            global $currencies;
+                            foreach ($currencies as $key => $currencyy) {
+                                echo '<option value="' . $key . '">' . $key . '</option>';
+                            }
+                            ?>
                         </select>
                     </div>
                 </div>
                 <p class="rate-info mt-2">
                     <?php
-                        if (isset($_GET['amount'])) {
-                            $total = $_GET['amount'] * $currency->getCurrencies()[$_GET['from']];
-                            echo $_GET['amount'] ." ". $_GET['from'] ." = ". $total ." USZ";
-                        }
-                    ?>
+                        if (isset($_GET['amount']) && isset($_GET['from'])) {
+                            if ($_GET['from'] != 'USZ'){
+                                $total = (int)$_GET['amount'] * (int)$currency->getCurrencies()[$_GET['from']];
+                                echo $_GET['amount'] ." ". $_GET['from'] ." = ". $total ." USZ";
+                            }
+                            else{
+                                $total = (int)$_GET["amount"] / (int)$currency->getCurrencies()[$_GET["to"]];
+                                echo $_GET["amount"] ." USZ = ". $total ." ". $_GET['to']; 
+                            }
+                    }
+                    ?> 
                     
                 <i class="bi bi-info-circle"></i></p>
                 <button type="submit" class="btn btn-primary btn-primary-custom mt-3">Convert</button>
