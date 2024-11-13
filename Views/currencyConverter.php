@@ -43,17 +43,17 @@
             <h3>Make fast and affordable international business payments</h3>
             <p>Send secure international business payments in XX currencies, all at competitive rates with no hidden
                 fees.</p>
-            <form >
+            <form>
                 <div class="row g-3 align-items-center">
                     <div class="col-md-5">
                         <label for="amount" class="form-label visually-hidden">Amount</label>
-                        <input type="number" id="amount" class="form-control" placeholder="Amount" name="amount">
+                        <input type="number" id="amount" class="form-control" placeholder="Amount" name="amount" require>
                     </div>
                     <div class="col-md-3 text-center">
                         <select class="form-select" name="from">
                             <?php
                             global $currencies;
-                                foreach ($currencies as $key => $currency) {
+                            foreach ($currencies as $key => $currencyy) {
                                 echo '<option value="' . $key . '">' . $key . '</option>';
                             }
                             ?>
@@ -68,7 +68,15 @@
                         </select>
                     </div>
                 </div>
-                <p class="rate-info mt-2">1.00 USD = 12,862.73 UZS <i class="bi bi-info-circle"></i></p>
+                <p class="rate-info mt-2">
+                    <?php
+                        if (isset($_GET['amount'])) {
+                            $total = $_GET['amount'] * $currency->getCurrencies()[$_GET['from']];
+                            echo $_GET['amount'] ." ". $_GET['from'] ." = ". $total ." USZ";
+                        }
+                    ?>
+                    
+                <i class="bi bi-info-circle"></i></p>
                 <button type="submit" class="btn btn-primary btn-primary-custom mt-3">Convert</button>
             </form>
         </div>

@@ -28,18 +28,4 @@ class Currency
         }
         return $seperateData;
     }
-
-    public function exchange($value, $currencyName = 'USD')
-    {
-        // echo ceil($value / $this->getCurrencies()[$currencyName]) . ' ' . $currencyName;
-    }
-
-    public function calculateCurrencys($value, $currencyName){
-        echo $value ." ". $currencyName ." = ". $value * $this->getCurrencies()[$currencyName] ." USZ";
-    }
-
 }
-
-$currency = new Currency();
-
-$currency->exchange(12800);
