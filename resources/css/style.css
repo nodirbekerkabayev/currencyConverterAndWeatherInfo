@@ -33,3 +33,8 @@
 .weather-icon {
     font-size: 4rem;
 }
+body.weatherBody{
+    background: url('https://img.freepik.com/premium-photo/transportation-delivery-overcasted-clouds-background-hd_199726-4167.jpg?ga=GA1.1.879905518.1724168647&semt=ais_hybrid') no-repeat center center fixed;
+    background-size: cover;
+    color: #000;
+}

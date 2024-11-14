@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="resources/css/style.css">
 </head>
-<body>
+<body class="weatherBody">
 <?php
 require "src/Weather.php";
 
@@ -21,21 +21,21 @@ $weather = new Weather();
         <div class="mb-3">
             <img id="weather-icon" src="<?php echo 'https://openweathermap.org/img/wn/' . $weather->getWeather()->weather[0]->icon .'@2x.png';?>" alt="Weather Icon" class="weather-icon">
         </div>
-        <h2 class="mb-3" id="temperature">5°C</h2>
-        <p id="description">Clear Sky</p>
+        <h2 class="mb-3" id="temperature"><?php echo (int)$weather->getWeather()->main->temp - 273.15; ?>^C</h2>
+        <h4 id="description"><?php echo $weather->getWeather()->weather[0]->description ?></h4>
 
         <div class="d-flex justify-content-around">
             <div>
                 <h5>Namlik</h5>
-                <p id="feels-like"><?php echo $weather->getWeather()->main->temp;?></p>
+                <p id="feels-like"><?php echo $weather->getWeather()->main->humidity;?>%</p>
             </div>
             <div>
                 <h5>Bosim</h5>
-                <p id="humidity">61%</p>
+                <p id="humidity"><?php echo $weather->getWeather()->main->pressure;?></p>
             </div>
             <div>
                 <h5>Shamol</h5>
-                <p id="wind-speed">3 m/s</p>
+                <p id="wind-speed"><?php echo $weather->getWeather()->wind->speed;?> m/s</p>
             </div>
         </div>
     </div>
