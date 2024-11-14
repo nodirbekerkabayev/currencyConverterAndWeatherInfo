@@ -1,24 +1,31 @@
-# Loyihaning nomi 'currencyConverter'
+# Currency Converter va Weather Info
 
-Bu loyiha HTML, CSS, Bootstrap va PHP yordamida yaratildi. Loyiha valyutalarni almashtirish uchun qo'llaniladi.
+Bu loyiha valyutalarni almashtirish va ob-havo ma'lumotlarini ko'rsatish uchun mo'ljallangan. Loyihada **HTML**, **CSS**, **Bootstrap**, va **PHP** texnologiyalari qo'llanilgan. Valyutani almashtirish uchun **O'zbekiston Markaziy Banki API** va ob-havo ma'lumotlari uchun **OpenWeatherMap API** dan foydalaniladi.
 
-## Loyiha haqida
+## Xususiyatlar
 
-- **Til**: PHP.
-- **API**: https://cbu.uz/uz/arkhiv-kursov-valyut/json/
-- **Maqsad**: Bu loyiha o'zbek so'mini boshqa valyutaga  yoki shuni teskarisini qilishga yordam beradi.
+- Valyutani o'zbek so'midan boshqa valyutaga va aksincha almashtirish.
+- Ob-havo ma'lumotlarini olish (masalan, harorat, namlik va havo holati).
+- Yangi qo'shilgan **Ob-Havo** tugmasi orqali ob-havo ma'lumotlarini ko'rish.
+
+## Texnologiyalar
+
+- Til: **PHP**
+- Frontend: **HTML**, **CSS**, **Bootstrap**
+- Valyuta API: [O'zbekiston Markaziy Banki API](https://cbu.uz/uz/arkhiv-kursov-valyut/json/)
+- Ob-Havo API: [OpenWeatherMap API](https://openweathermap.org/api)
 
 ## Talablar
 
-Loyihani ishga tushirishdan oldin quyidagi dasturlar o'rnatilgan bo'lishi kerak:
+Loyihani ishga tushirish uchun quyidagi dasturlar o'rnatilgan bo'lishi kerak:
 
-- Apache yoki Nginx serveri (masalan, XAMPP, WAMP, yoki MAMP)
-- PHP 7.4 yoki yuqoriroq
-- https://cbu.uz/uz/arkhiv-kursov-valyut/json/
+- Apache yoki Nginx serveri (masalan, **XAMPP**, **WAMP**, yoki **MAMP**)
+- PHP 7.4 yoki undan yuqori versiya
 
-## O'rnatish
+## Loyihani o'rnatish
 
-1. Loyihani klonlang:
-   ```bash
-   git clone https://github.com/nodirbekerkabayev/currencyConverter.git
-   cd currencyConverter
+Quyidagi buyruqlar orqali loyihani klonlashingiz mumkin:
+
+```bash
+git clone https://github.com/nodirbekerkabayev/currencyConverter.git
+cd currencyConverter
