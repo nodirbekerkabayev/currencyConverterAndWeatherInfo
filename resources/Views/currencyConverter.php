@@ -9,32 +9,8 @@
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <style>
-        .currency-card {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 30px;
-            background: #fff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-
-        .currency-section {
-            padding: 60px 0;
-        }
-
-        .info-section {
-            padding: 60px 0;
-            text-align: center;
-        }
-
-        .btn-primary-custom {
-            background-color: #d32f2f;
-            border: none;
-        }
-    </style>
+    <link rel="stylesheet" href="resources/css/style.css">
 </head>
-
 <body>
     <div class="currency-section text-center pt-5 bg-primary-subtle">
         <h1>Currency Converter</h1>
@@ -67,7 +43,8 @@
                         <select class="form-select" name="to">
                             <option value="">UZS</option>
                             <?php
-                            global $currencies;
+                            global $currency;
+                            $currencies = array_slice($currency->getCurrencies(), 0, 10);
                             foreach ($currencies as $key => $currencyy) {
                                 echo '<option value="' . $key . '">' . $key . '</option>';
                             }
@@ -77,7 +54,8 @@
                 </div>
                 <p class="rate-info mt-2">
                     <?php
-                        if (isset($_GET['amount']) && isset($_GET['from'])) {
+                            global $currency;
+                            $currencies = array_slice($currency->getCurrencies(), 0, 10);                        if (isset($_GET['amount']) && isset($_GET['from'])) {
                             if ($_GET['from'] != 'UZS'){
                                 $total = (int)$_GET['amount'] * (int)$currency->getCurrencies()[$_GET['from']];
                                 echo $_GET['amount'] ." ". $_GET['from'] ." = ". $total ." UZS";
@@ -87,9 +65,8 @@
                                 echo $_GET["amount"] ." UZS = ". $total ." ". $_GET['to']; 
                             }
                     }
-                    ?> 
-                    
-                <i class="bi bi-info-circle"></i></p>
+                    ?>
+                </p>
                 <button type="submit" class="btn btn-primary btn-primary-custom mt-3">Convert</button>
             </form>
         </div>
@@ -100,8 +77,7 @@
             movement, then a firm order could be perfect for you. When your chosen rate is reached, we'll act
             immediately,
             leaving you free to concentrate on your business.</p>
-        <button class="btn btn-outline-danger">Find out more</button>
-    </div>
+        <a href="./weather.php" class="btn btn-outline-danger">Ob havo ma'lumotlari</a>    </div>
 </body>
 
 </html>

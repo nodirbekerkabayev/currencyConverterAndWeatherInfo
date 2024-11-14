@@ -1,8 +1,7 @@
 <?php
 
-require 'Currency.php';
+require 'src/Currency.php';
 
 $currency = new Currency();
-$currencies = $currency->getCurrencies();
 
-require 'Views/currencyConverter.php';
+require 'resources/Views/currencyConverter.php';
