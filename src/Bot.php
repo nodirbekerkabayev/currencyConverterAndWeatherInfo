@@ -11,14 +11,6 @@ class Bot{
         curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
         $response = curl_exec($ch);
         curl_close($ch);
-        return $response;
+        return json_decode($response);
     }
 }
-$bot = new Bot();
-$bot->makeRequest('sendMessage',
-                    ['chat_id'=> 1496582085,
-                     'text'=>'hello world!']);
-
-$bot->makeRequest('sendVideo',
-                 ['chat_id'=> 1496582085,
-                 'video'=> 'https://www.w3schools.com/html/mov_bbb.mp4']);

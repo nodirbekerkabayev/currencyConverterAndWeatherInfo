@@ -28,7 +28,8 @@
                     <div class="col-md-3 text-center">
                         <select class="form-select" name="from">
                             <?php
-                            global $currencies;
+                            global $currency;
+                            $currencies = array_slice($currency->getCurrencies(), 0, 10);
                             foreach ($currencies as $key => $currencyy) {
                                 echo '<option value="' . $key . '">' . $key . '</option>';
                             }
