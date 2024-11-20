@@ -78,7 +78,8 @@
             movement, then a firm order could be perfect for you. When your chosen rate is reached, we'll act
             immediately,
             leaving you free to concentrate on your business.</p>
-        <a href="./weather.php" class="btn btn-outline-danger">Ob havo ma'lumotlari</a>    </div>
+        <a href="/weather" class="btn btn-outline-danger">Weather Info</a>
+    </div>
 </body>
 
 </html>

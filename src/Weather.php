@@ -1,6 +1,6 @@
 <?php
 
-require 'vendor/autoload.php';
+require __DIR__ . '/../vendor/autoload.php';
 
 use GuzzleHttp\Client;
 class Weather {
@@ -14,8 +14,7 @@ class Weather {
             'timeout'  => 2.0,
             'verify' => false,
         ]);
-        $request = $this->client->request('GET');
-        return $request;
+        $this->weather_data = json_decode($this->client->request('GET')->getBody()->getContents());
 
     }
     public function getWeather () {
