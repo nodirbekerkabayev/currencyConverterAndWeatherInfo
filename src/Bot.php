@@ -24,8 +24,10 @@ class Bot {
 
         return json_decode($response->getBody()->getContents(), true);
     }
-    public function saveUsers($userId, $username)
-    {
+    public function saveUsers($userId, $username){
+        if ($this->getUsers($userId)){
+            return false;
+        }
         $query = "INSERT INTO telegrambot(username, userId) VALUES (:userId, :username)";
         $db = new DB();
         return $db->pdo->prepare($query)->execute([
@@ -33,4 +35,13 @@ class Bot {
             ':username' => $username
         ]);
         }
+    public function getUsers($userId){
+        $query = "SELECT * FROM telegrambot WHERE userId = :userId";
+        $db = new DB();
+        $stmt = $db->pdo->prepare($query);
+        $stmt->execute([
+            ':userId' => $userId
+        ]);
+        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+    }
 }

@@ -30,7 +30,9 @@ if(isset($update)){
 
         $bot->makeRequest('sendMessage', [
             'chat_id' => $from_id,
-            'text' => 'Xush kelibsiz! Ushbu bot orqali valyuta kurslarini bilib olishingiz mumkin.',
+            'text' => 'Xush kelibsiz! Ushbu bot orqali valyuta kurslari va ob-havo ma\'lumotlarini bilib olishingiz mumkin.',
+            'parse_mode' => 'HTML',
+            'reply_markup' => $reply_keyboard,
         ]);
     }
 
